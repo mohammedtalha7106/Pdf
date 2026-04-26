@@ -1,0 +1,47 @@
+import pandas as pd  # Import Pandas library
+
+s1 = pd.Series([10, 20, 30, 40, 50])  # Create Series from list
+s2 = pd.Series([100, 200, 300], index=['a', 'b', 'c'])  # Series with custom index
+
+print("s1:\n", s1)  # Display s1
+print("\ns2:\n", s2)  # Display s2
+
+data = {'Name': ['Alice', 'Bob', 'Charlie'], 'Age': [20, 21, 19], 'Course': ['CSE', 'ECE', 'ME']}  # Dictionary data
+df = pd.DataFrame(data)  # Create DataFrame
+
+print("\nDataFrame:\n", df)  # Display DataFrame
+
+print("\nHead:\n", df.head())  # First 5 rows
+print("\nTail:\n", df.tail())  # Last 5 rows
+print("\nInfo:")  # Info heading
+df.info()  # Display info about DataFrame
+print("\nDescribe:\n", df.describe())  # Statistical summary
+
+print("\nSelect Name column:\n", df['Name'])  # Select single column
+print("\nSelect Name & Age:\n", df[['Name', 'Age']])  # Select multiple columns
+print("\nFirst row:\n", df.iloc[0])  # First row
+print("\nFirst two rows:\n", df.iloc[0:2])  # First two rows
+print("\nAge > 20:\n", df[df['Age'] > 20])  # Conditional selection
+
+df['Marks'] = [85, 90, 80]  # Add new column
+print("\nAfter adding Marks:\n", df)  # Display updated DataFrame
+
+df.drop('Marks', axis=1, inplace=True)  # Delete column
+print("\nAfter deleting Marks:\n", df)  # Display updated DataFrame
+
+print("\nSorted by Age:\n", df.sort_values('Age'))  # Sort by Age
+print("\nFilter Course = CSE:\n", df[df['Course'] == 'CSE'])  # Filter rows
+
+print("\nCheck Missing:\n", df.isnull())  # Check missing values
+print("\nFill Missing:\n", df.fillna(0))  # Fill missing values
+print("\nDrop Missing:\n", df.dropna())  # Drop missing values
+
+print("\nSum Age:", df['Age'].sum())  # Sum of Age
+print("Mean Age:", df['Age'].mean())  # Mean of Age
+print("Max Age:", df['Age'].max())  # Maximum Age
+print("Min Age:", df['Age'].min())  # Minimum Age
+
+df1 = pd.DataFrame({'Name': ['David'], 'Age': [22], 'Course': ['CSE']})  # New DataFrame
+df_new = pd.concat([df, df1], ignore_index=True)  # Concatenate DataFrames
+
+print("\nAfter Concatenation:\n", df_new)  # Display final DataFrame
