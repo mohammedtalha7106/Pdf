@@ -1,0 +1,54 @@
+import numpy as np  # Import NumPy library
+
+arr1=np.array([1,2,3,4,5])  # Create array from list
+arr2=np.array((6,7,8,9))  # Create array from tuple
+arr3=np.arange(10)  # Create array using range 0–9
+arr4=np.zeros((2,3))  # Create 2x3 array of zeros
+arr5=np.ones((3,2))  # Create 3x2 array of ones
+arr6=np.random.randint(1,10,size=(2,3))  # Create random 2x3 array
+
+arr7=np.arange(12).reshape(3,4)  # Reshape into 3x4 matrix
+
+arr_slice=arr7[1:,2:]  # Slice rows from index 1 and columns from index 2
+element=arr7[0,2]  # Access element at row 0, column 2
+
+arr_a=np.array([1,2,3])  # First array for operations
+arr_b=np.array([4,5,6])  # Second array for operations
+
+add=arr_a+arr_b  # Addition
+sub=arr_b-arr_a  # Subtraction
+mul=arr_a*arr_b  # Multiplication
+div=arr_b/arr_a  # Division
+
+greater_than=arr_a>2  # Logical condition >2
+equal_check=arr_b==5  # Logical condition ==5
+
+sum_val=np.sum(arr_a)  # Sum of elements
+mean_val=np.mean(arr_b)  # Mean of elements
+min_val=np.min(arr_b)  # Minimum value
+max_val=np.max(arr_b)  # Maximum value
+std_val=np.std(arr_b)  # Standard deviation
+
+print("arr1:",arr1)  # Display arr1
+print("arr2:",arr2)  # Display arr2
+print("arr3:",arr3)  # Display arr3
+print("arr4:\n",arr4)  # Display arr4
+print("arr5:\n",arr5)  # Display arr5
+print("arr6:\n",arr6)  # Display arr6
+print("arr7:\n",arr7)  # Display reshaped array
+print("slice:\n",arr_slice)  # Display sliced array
+print("element:",element)  # Display indexed element
+
+print("add:",add)  # Display addition
+print("sub:",sub)  # Display subtraction
+print("mul:",mul)  # Display multiplication
+print("div:",div)  # Display division
+
+print("arr_a>2:",greater_than)  # Display logical result
+print("arr_b==5:",equal_check)  # Display logical result
+
+print("sum:",sum_val)  # Display sum
+print("mean:",mean_val)  # Display mean
+print("min:",min_val)  # Display min
+print("max:",max_val)  # Display max
+print("std:",std_val)  # Display standard deviation
