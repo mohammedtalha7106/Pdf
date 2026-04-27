@@ -1,0 +1,30 @@
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.metrics import accuracy_score
+
+# Dataset
+X = [
+    [25, 40000],
+    [35, 60000],
+    [45, 80000],
+    [20, 20000],
+    [30, 30000],
+    [50, 90000]
+]
+
+y = [0, 1, 1, 0, 0, 1]
+
+# Model (ID3 uses entropy)
+model = DecisionTreeClassifier(criterion='entropy')
+
+# Train
+model.fit(X, y)
+
+# Test sample
+test = [[30, 50000]]
+
+# Prediction
+prediction = model.predict(test)
+print("Prediction for", test, ":", prediction)
+
+# Accuracy
+print("Accuracy:", accuracy_score(y, model.predict(X)))
